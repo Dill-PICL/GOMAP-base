@@ -11,6 +11,7 @@ Version 0.1
 
 %files
 	post.sh /root/
+	requirements.txt /root/	
 
 %post
 	echo "Running post.sh"
