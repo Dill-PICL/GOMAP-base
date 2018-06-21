@@ -7,7 +7,7 @@ Version 0.1
 
 %environment
     export LC_ALL=C
-	export DEBIAN_FRONTEND=noninteractive
+    export DEBIAN_FRONTEND=noninteractive
 
 %files
 	post.sh /root/
