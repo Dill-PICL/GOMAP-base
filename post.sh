@@ -1,7 +1,7 @@
 #!/bin/bash
 
 apt-get -q -y update
-apt-get -q -y install debconf-utils less vim wget python-pip libfuse2 r-base openjdk-8-jdk
+apt-get -q -y install build-essential apt-utils debconf-utils less vim wget python-pip libfuse2 r-base openjdk-8-jdk libmysqlclient-dev
 
 # R -e 'install.packages(c("data.table","futile.logger","ggplot2","ontologyIndex","reshape2","scales","jsonlite","yaml"))'
 sed -i 's/make/make -j4/g' /usr/lib/R/etc/Renviron
