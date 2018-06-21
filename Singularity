@@ -12,7 +12,8 @@ Version 0.1
 %files
 	post.sh /root/
 	requirements.txt /root/
+	mysqld.cnf /root/mysqld.cnf
 
 %post
-	echo "Running post.sh"
+	echo "Running post.sh" 
 	/root/post.sh
