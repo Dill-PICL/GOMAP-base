@@ -18,6 +18,8 @@ chmod 777 /var/lib/mysql
 
 mv /root/mysqld.cnf /etc/mysql/mysql.conf.d/
 
+
+
 echo "=============================================="
 echo "Completed Post"
 echo "=============================================="
