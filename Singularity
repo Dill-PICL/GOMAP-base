@@ -10,11 +10,9 @@ Version 0.1
     export DEBIAN_FRONTEND=noninteractive
 
 %files
-	post.sh /root/
 	requirements.txt /root/
 	mysqld.cnf /root/mysqld.cnf
 	irods_environment.json /root/
-	.passwd /root/
 
 %post
 	echo "Running post.sh" 
