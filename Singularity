@@ -16,4 +16,5 @@ Version 0.1
 
 %post
 	echo "Running post.sh" 
-	/root/post.sh
+	/root/post.sh 
+	echo "Completed Post Section"

@@ -18,7 +18,8 @@ chmod 777 /var/lib/mysql
 
 mv /root/mysqld.cnf /etc/mysql/mysql.conf.d/
 
-
+wget ftp://ftp.renci.org/pub/irods/releases/4.1.9/ubuntu14/irods-icommands-4.1.9-ubuntu14-x86_64.deb
+dpkg -i irods-icommands-4.1.9-ubuntu14-x86_64.deb
 
 echo "=============================================="
 echo "Completed Post"
