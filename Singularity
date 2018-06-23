@@ -7,12 +7,15 @@ Version 0.1
 
 %environment
     export LC_ALL=C
-    export DEBIAN_FRONTEND=noninteractive
+	export DEBIAN_FRONTEND=noninteractive
+	export MYSQL_USER=pannzer
+    export MYSQL_DATABASE=pannzer
+    export MYSQL_ROOT_PASSWORD=mysql
 
 %files
-	requirements.txt /root/
-	mysqld.cnf /root/mysqld.cnf
-	irods_environment.json /root/
+	requirements.txt 
+	mysqld.cnf 
+	my.cnf
 
 %post
 	echo "Running post.sh" 
@@ -25,31 +28,34 @@ Version 0.1
 	## Trying different mysql install method
 	apt-get download mysql-server-5.7
 	dpkg --unpack mysql-server*.deb
-	echo "=============================================="
-	ls -lh /var/lib/dpkg/info/ | grep mysql-server
-	echo "=============================================="
 	
 	rm -f /var/lib/dpkg/info/mysql-server-5.7.postinst
 	dpkg --configure mysql-server-5.7
-	apt-get install -yf mysql-server-5.7
-	apt-get -yf install libmysqld-dev libmysqlclient-dev
+	apt-get install -yfq mysql-server-5.7
+	apt-get -yq install libmysqld-dev mysql-client libmysqlclient-dev
 
-	# R -e 'install.packages(c("data.table","futile.logger","ggplot2","ontologyIndex","reshape2","scales","jsonlite","yaml"))'
 	sed -i 's/make/make -j4/g' /usr/lib/R/etc/Renviron
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"))'
 
-	pip install -r /root/requirements.txt
+	pip install -r requirements.txt
 
+	mkdir /var/lib/mysql-files
+	rm -rf /var/lib/mysql
+	mkdir -p /var/lib/mysql
 	chmod 777 /var/lib/mysql
+	mkdir -p /var/run/mysqld
+	chmod 777 /var/run/mysqld
 
-	mv /root/mysqld.cnf /etc/mysql/mysql.conf.d/
+	mv mysqld.cnf /etc/mysql/mysql.conf.d/
+	mv /etc/mysql /etc/mysqld
+	mkdir -p /etc/mysql
+	mv my.cnf /etc/mysql
+	
 
 	wget ftp://ftp.renci.org/pub/irods/releases/4.1.9/ubuntu14/irods-icommands-4.1.9-ubuntu14-x86_64.deb
 	dpkg -i irods-icommands-4.1.9-ubuntu14-x86_64.deb
 
 	mkdir /root/.irods
-	mv /root/irods_environment.json /root/.irods/
-	cat /root/.irods/irods_environment.json
 	
 	echo "=============================================="
 	echo "Completed Post"

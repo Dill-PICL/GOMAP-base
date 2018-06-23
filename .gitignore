@@ -1,3 +1,5 @@
 openjdk8-python-rbase
 GOMAP*
 out
+tmp
+mysql
