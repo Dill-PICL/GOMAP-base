@@ -13,8 +13,7 @@ Version 0.1
     export MYSQL_ROOT_PASSWORD=mysql
 
 %files
-	requirements.txt 
-	mysqld.cnf 
+	requirements.txt
 	my.cnf
 
 %post
@@ -46,7 +45,6 @@ Version 0.1
 	mkdir -p /var/run/mysqld
 	chmod 777 /var/run/mysqld
 
-	mv mysqld.cnf /etc/mysql/mysql.conf.d/
 	mv /etc/mysql /etc/mysqld
 	mkdir -p /etc/mysql
 	mv my.cnf /etc/mysql
