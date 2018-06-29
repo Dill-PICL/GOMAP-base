@@ -7,14 +7,14 @@ Version 0.1
 
 %environment
     export LC_ALL=C
-	export DEBIAN_FRONTEND=noninteractive
-	export MYSQL_USER=pannzer
+    export DEBIAN_FRONTEND=noninteractive
+    export MYSQL_USER=pannzer
     export MYSQL_DATABASE=pannzer
     export MYSQL_ROOT_PASSWORD=mysql
 
 %files
-	requirements.txt
-	my.cnf
+    requirements.txt
+    my.cnf
 
 %post
 	echo "Running post.sh" 
@@ -22,8 +22,6 @@ Version 0.1
 	apt-get -yq install bsdutils lsb-base mysql-client-5.7 mysql-common mysql-server-core-5.7 passwd perl psmisc debconf libc6 libevent-core-2.1-6 libgcc1 liblz4-1 libstdc++6 zlib1g 
 	apt-get -q -y install build-essential less vim wget python-pip libfuse2 r-base openjdk-8-jdk libidn11-dev libssl1.0-dev libssl1.0.0
 
-	#bash -c 'debconf-set-selections <<< "mysql-server mysql-server/root_password password mysql"'
-	#bash -c 'debconf-set-selections <<< "mysql-server mysql-server/root_password_again password mysql"'
 	## Trying different mysql install method
 	apt-get download mysql-server-5.7
 	dpkg --unpack mysql-server*.deb
@@ -47,13 +45,10 @@ Version 0.1
 
 	mv /etc/mysql /etc/mysqld
 	mkdir -p /etc/mysql
-	mv my.cnf /etc/mysql
-	
+	mv my.cnf /etc/mysql	
 
 	wget ftp://ftp.renci.org/pub/irods/releases/4.1.9/ubuntu14/irods-icommands-4.1.9-ubuntu14-x86_64.deb
 	dpkg -i irods-icommands-4.1.9-ubuntu14-x86_64.deb
-
-	mkdir /root/.irods
 	
 	echo "=============================================="
 	echo "Completed Post"
