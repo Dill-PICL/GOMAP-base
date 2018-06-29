@@ -14,7 +14,7 @@ Version 0.1
 
 %files
     requirements.txt
-    my.cnf
+    my.cnf 
 
 %post
 	echo "Running post.sh" 
