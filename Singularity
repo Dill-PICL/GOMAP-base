@@ -45,11 +45,11 @@ Version 0.1
 
 	mv /etc/mysql /etc/mysqld
 	mkdir -p /etc/mysql
-	mv my.cnf /etc/mysql	
+	mv my.cnf /etc/mysql
 
 	wget ftp://ftp.renci.org/pub/irods/releases/4.1.9/ubuntu14/irods-icommands-4.1.9-ubuntu14-x86_64.deb
 	dpkg -i irods-icommands-4.1.9-ubuntu14-x86_64.deb
 	
 	echo "=============================================="
-	echo "Completed Post"
+	echo "Completed Post" 
 	echo "=============================================="
