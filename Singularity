@@ -34,7 +34,7 @@ Version 0.1
 	sed -i 's/make/make -j4/g' /usr/lib/R/etc/Renviron
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"))'
 
-	pip install -r requirements.txt
+	pip install -r requirements.txt 
 
 	mkdir /var/lib/mysql-files
 	rm -rf /var/lib/mysql
