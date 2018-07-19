@@ -17,7 +17,7 @@ Version 0.1
     my.cnf 
 
 %post
-	echo "Running post.sh" 
+	echo "Running post.sh"
 	apt-get -q -y update
 	apt-get -yq install bsdutils lsb-base mysql-client-5.7 mysql-common mysql-server-core-5.7 passwd perl psmisc debconf libc6 libevent-core-2.1-6 libgcc1 liblz4-1 libstdc++6 zlib1g 
 	apt-get -q -y install build-essential less vim wget python-pip libfuse2 r-base openjdk-8-jdk libidn11-dev libssl1.0-dev libssl1.0.0
