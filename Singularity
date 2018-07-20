@@ -3,7 +3,7 @@ From: ubuntu:bionic
 
 %labels
 MAINTAINER Kokulapalan Wimalanathan
-Version 0.1
+Version 1.0.0
 
 %environment
     export LC_ALL=C
