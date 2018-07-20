@@ -31,8 +31,7 @@ Version 0.1
 	apt-get install -yfq mysql-server-5.7
 	apt-get -yq install libmysqld-dev mysql-client libmysqlclient-dev
 
-	sed -i 's/make/make -j4/g' /usr/lib/R/etc/Renviron
-	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"))'
+	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
 
 	pip install -r requirements.txt 
 
