@@ -30,6 +30,7 @@ Version 1.0.0
 	dpkg --configure mysql-server-5.7
 	apt-get install -yfq mysql-server-5.7
 	apt-get -yq install libmysqld-dev mysql-client libmysqlclient-dev
+	apt-get install -y libopenmpi-dev libopenmpi2 openmpi-bin openmpi-common
 
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
 
