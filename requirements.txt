@@ -1,4 +1,4 @@
-biopython==1.71
+biopython==1.69
 jsonmerge==1.5.1
 jsonschema==2.6.0
 lxml==4.2.1
@@ -10,3 +10,4 @@ pyrocopy==0.8.0
 requests==2.19.1
 requests-toolbelt==0.8.0
 numpydoc==0.8.0
+scipy==1.1.0
