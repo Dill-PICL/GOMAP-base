@@ -34,7 +34,7 @@ Version 1.0.0
 
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
 
-	pip install -r requirements.txt
+	pip install -r requirements.txt 
 
 	mkdir /var/lib/mysql-files
 	rm -rf /var/lib/mysql
