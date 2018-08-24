@@ -3,7 +3,7 @@ From: ubuntu:bionic
 
 %labels
 MAINTAINER Kokulapalan Wimalanathan
-Version 1.0.0
+Version 1.1.0
 
 %environment
     export LC_ALL=C
@@ -30,11 +30,10 @@ Version 1.0.0
 	dpkg --configure mysql-server-5.7
 	apt-get install -yfq mysql-server-5.7
 	apt-get -yq install libmysqld-dev mysql-client libmysqlclient-dev
-	apt-get install -y libopenmpi-dev libopenmpi2 openmpi-bin openmpi-common
 
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
 
-	pip install -r requirements.txt 
+	pip install -r requirements.txt
 
 	mkdir /var/lib/mysql-files
 	rm -rf /var/lib/mysql
@@ -42,6 +41,7 @@ Version 1.0.0
 	chmod 777 /var/lib/mysql
 	mkdir -p /var/run/mysqld
 	chmod 777 /var/run/mysqld
+	mkdir -p /var/log/mysql
 
 	mv /etc/mysql /etc/mysqld
 	mkdir -p /etc/mysql
