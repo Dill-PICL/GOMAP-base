@@ -20,7 +20,7 @@ Version 1.1.0
 	echo "Running post.sh"
 	apt-get -q -y update
 	apt-get -yq install bsdutils lsb-base mysql-client-5.7 mysql-common mysql-server-core-5.7 passwd perl psmisc debconf libc6 libevent-core-2.1-6 libgcc1 liblz4-1 libstdc++6 zlib1g 
-	apt-get -q -y install build-essential less vim wget python-pip libfuse2 r-base openjdk-8-jdk libidn11-dev libssl1.0-dev libssl1.0.0 git
+	apt-get -q -y install build-essential less vim wget python-pip python3-pip libfuse2 r-base openjdk-8-jdk libidn11-dev libssl1.0-dev libssl1.0.0 git
 
 	## Trying different mysql install method
 	apt-get download mysql-server-5.7
