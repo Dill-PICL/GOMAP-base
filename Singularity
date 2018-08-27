@@ -38,7 +38,7 @@ Version 1.1.0
     tar -xf  mpich-3.2.tar.gz && \
     cd mpich-3.2 &&  \
     ./configure && make -j4 && make install && \
-    cd ..
+    cd .. 
 
 	pip install -r requirements.txt
 
