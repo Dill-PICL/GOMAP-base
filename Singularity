@@ -38,9 +38,9 @@ Version 1.1.0
     tar -xf  mpich-3.2.tar.gz && \
     cd mpich-3.2 &&  \
     ./configure && make -j4 && make install && \
-    cd .. 
+    cd ..   
 
-	pip install -r requirements.txt
+	pip install -r requirements.txt  
 
 	mkdir /var/lib/mysql-files
 	rm -rf /var/lib/mysql
