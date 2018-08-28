@@ -33,7 +33,7 @@ Version 1.1.0
 
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
 
-	pip install -r requirements.txt 
+	pip install -r requirements.txt
 
 	mkdir /var/lib/mysql-files
 	rm -rf /var/lib/mysql
@@ -49,6 +49,7 @@ Version 1.1.0
 
 	wget ftp://ftp.renci.org/pub/irods/releases/4.1.9/ubuntu14/irods-icommands-4.1.9-ubuntu14-x86_64.deb
 	dpkg -i irods-icommands-4.1.9-ubuntu14-x86_64.deb
+
 
 
 	echo "=============================================="
