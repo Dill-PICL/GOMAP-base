@@ -33,14 +33,7 @@ Version 1.1.0
 
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
 
-	#Installing mpich
-    wget http://www.mpich.org/static/downloads/3.2/mpich-3.2.tar.gz && \
-    tar -xf  mpich-3.2.tar.gz && \
-    cd mpich-3.2 &&  \
-    ./configure && make -j4 && make install && \
-    cd ..   
-
-	pip install -r requirements.txt  
+	pip install -r requirements.txt
 
 	mkdir /var/lib/mysql-files
 	rm -rf /var/lib/mysql
