@@ -33,7 +33,22 @@ Version 1.1.0
 
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
 
-	pip install -r requirements.txt
+	pip install numpy==1.14.5 \
+				jsonmerge==1.5.1 \
+				jsonschema==2.6.0 \
+				lxml==4.2.1 \
+				MySQL-python==1.2.5 \
+				PyYAML==3.12 \
+				yamldirs==1.1.3 \
+				pyrocopy==0.8.0 \
+				requests==2.19.1 \
+				requests-toolbelt==0.8.0 \
+				numpydoc==0.8.0 \
+				scipy==1.1.0 \
+				biopython==1.70 \
+				mpi4py==3.0.0 \
+				joblib==0.12.2 \
+				natsort==5.3.3
 
 	mkdir /var/lib/mysql-files
 	rm -rf /var/lib/mysql
