@@ -13,8 +13,7 @@ Version 1.1.0
     export MYSQL_ROOT_PASSWORD=mysql
 
 %files
-    requirements.txt
-    my.cnf 
+    my.cnf
 
 %post
 	echo "Running post.sh"
@@ -31,9 +30,10 @@ Version 1.1.0
 	apt-get install -yfq mysql-server-5.7
 	apt-get -yq install libmysqld-dev mysql-client libmysqlclient-dev
 
-	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","scales","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
+	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
 
 	pip install numpy==1.14.5 \
+				scipy==1.1.0 \
 				jsonmerge==1.5.1 \
 				jsonschema==2.6.0 \
 				lxml==4.2.1 \
@@ -44,7 +44,6 @@ Version 1.1.0
 				requests==2.19.1 \
 				requests-toolbelt==0.8.0 \
 				numpydoc==0.8.0 \
-				scipy==1.1.0 \
 				biopython==1.70 \
 				joblib==0.12.2 \
 				natsort==5.3.3
@@ -64,8 +63,6 @@ Version 1.1.0
 
 	wget ftp://ftp.renci.org/pub/irods/releases/4.1.9/ubuntu14/irods-icommands-4.1.9-ubuntu14-x86_64.deb
 	dpkg -i irods-icommands-4.1.9-ubuntu14-x86_64.deb
-
-
 
 	echo "=============================================="
 	echo "Completed Post" 
