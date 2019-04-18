@@ -3,3 +3,4 @@ GOMAP*
 out
 tmp
 mysql
+.ipynb_checkpoints/
