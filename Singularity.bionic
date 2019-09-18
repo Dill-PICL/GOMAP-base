@@ -4,6 +4,7 @@ From: ubuntu:bionic
 %labels
 MAINTAINER Kokulapalan Wimalanathan
 Version 1.1.0
+Singularity Version 3.2.1
 
 %environment
     export LC_ALL=C
