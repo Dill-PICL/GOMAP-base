@@ -26,6 +26,8 @@ Singularity Version 3.2.1
 	update-java-alternatives -s java-1.8.0-openjdk-amd64
 	
 	sudo snap install aws-cli --classic
+	
+	
 
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
 
