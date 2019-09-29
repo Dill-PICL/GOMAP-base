@@ -13,9 +13,6 @@ Singularity Version 3.2.1
     export MYSQL_DATABASE=pannzer
     export MYSQL_ROOT_PASSWORD=mysql
 
-%files
-    my.cnf 
-
 %post
   export LC_ALL=C
   export DEBIAN_FRONTEND=noninteractive
