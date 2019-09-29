@@ -13,7 +13,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                singularity exec GOMAP-base.sif
+                sh '''
+                    singularity exec GOMAP-base.sif
+                '''
             }
         }
     }
