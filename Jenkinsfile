@@ -20,7 +20,6 @@ pipeline {
                 '''
             }
         }
-    }
     stage('Post') {
             steps {
                 echo 'Image Successfully Built'
@@ -29,4 +28,5 @@ pipeline {
                 '''
             }
         }
+    }
 }
