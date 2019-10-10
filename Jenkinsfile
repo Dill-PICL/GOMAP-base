@@ -1,5 +1,7 @@
+def gomap_base_version = '1.3.1'
+
 pipeline {
-    agent any
+    agent ubuntu
     stages {
         stage('Build') {
             steps {
@@ -19,4 +21,12 @@ pipeline {
             }
         }
     }
+    stage('Post') {
+            steps {
+                echo 'Image Successfully Built'
+                sh '''
+                    az storage account list
+                '''
+            }
+        }
 }
