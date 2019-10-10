@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo 'Image Successfully Built'
                 sh '''
-                    az storage account list
+                    az  storage account list
                 '''
             }
         }
