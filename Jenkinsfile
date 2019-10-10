@@ -1,7 +1,7 @@
 def gomap_base_version = '1.3.1'
 
 pipeline {
-    agent ubuntu
+    agent {jenkinsslave}
     stages {
         stage('Build') {
             steps {
