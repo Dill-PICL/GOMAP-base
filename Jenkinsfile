@@ -1,7 +1,7 @@
 def gomap_base_version = '1.3.1'
 
 pipeline {
-    agent {jenkinsslave}
+    agent any
     stages {
         stage('Build') {
             steps {
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo 'Image Successfully Built'
                 sh '''
-                    az  storage account list
+                    az   storage account list
                 '''
             }
         }
