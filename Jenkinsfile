@@ -24,13 +24,8 @@ pipeline {
         stage('Post') {
             steps {
                 echo 'Image Successfully Built'
-                sh '''
-                    azcopy 
-                '''
+                archiveArtifacts "GOMAP-base.sif"
             }
-        }
-        stage('Archive') {
-            archiveArtifacts "GOMAP-base.sif"
         }
     }
 }
