@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        CONTAINER = 'GOMAP'
+        CONTAINER = 'gomap'
     }
     stages {
         stage('Build') {
