@@ -39,7 +39,10 @@ Singularity Version 3.2.1
 	pip install joblib==0.12.2
 	pip install natsort==5.3.3
 
-
+	wget -O azcopy.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
+	tar -xf azcopy.tar.gz && \
+	cp azcopy_linux_amd64_10.3.0/azcopy /usr/local/bin/ && \
+	chmod 755 /usr/local/bin/azcopy
 
 	echo "=============================================="
 	echo "Completed Post" 
