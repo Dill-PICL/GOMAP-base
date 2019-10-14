@@ -2,6 +2,8 @@ pipeline {
     agent any
     environment {
         CONTAINER = 'gomap'
+        IMAGE = 'GOMAP-base'
+        VERSION = '1.3.1'
     }
     stages {
         stage('Build') {
@@ -24,7 +26,7 @@ pipeline {
         stage('Post') {
             steps {
                 echo 'Image Successfully Built'
-                archiveArtifacts "GOMAP-base.sif"
+                azureUpload storageCredentialId 'gomap', filesPath "GOMAP-base.sif", allowAnonymousAccess true, virtualPath "${CONTAINER}/${IMAGE}/${VERSION}/" 
             }
         }
     }
