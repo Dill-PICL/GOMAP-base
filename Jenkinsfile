@@ -1,11 +1,12 @@
 pipeline {
-    agent any
+    agent { label 'ubuntu'}
     environment {
         CONTAINER = 'gomap'
         IMAGE = 'GOMAP-base'
         VERSION = '1.3.1'
         ZENODO_KEY = credentials('zenodo')
     }
+    when { changeset "Singularity"}
     stages {
         stage('Build') {
             steps {
