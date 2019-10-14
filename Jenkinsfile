@@ -34,7 +34,6 @@ pipeline {
                     python3 zenodo_upload.py ${ZENODO_KEY}
                 '''
                 azureUpload (storageCredentialId:'gomap', filesPath:"GOMAP-base.sif",allowAnonymousAccess:true, virtualPath:"${IMAGE}/${VERSION}/", storageType:"blob",containerName:'gomap')
-
             }
         }
     }
