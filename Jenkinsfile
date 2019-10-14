@@ -6,9 +6,10 @@ pipeline {
         VERSION = '1.3.1'
         ZENODO_KEY = credentials('zenodo')
     }
-    when { changeset "Singularity"}
+    
     stages {
         stage('Build') {
+            when { changeset "Singularity"}
             steps {
                 sh '''
                     echo ${ZENODO_KEY}
@@ -21,6 +22,7 @@ pipeline {
             }
         }
         stage('Test') {
+            when { changeset "Singularity"}
             steps {
                 echo 'Testing..'
                 sh '''
@@ -29,6 +31,7 @@ pipeline {
             }
         }
         stage('Post') {
+            when { changeset "Singularity"}
             steps {
                 echo 'Image Successfully Built'
                 sh '''
