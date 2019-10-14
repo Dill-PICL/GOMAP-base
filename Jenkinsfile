@@ -4,7 +4,7 @@ pipeline {
         CONTAINER = 'gomap'
         IMAGE = 'GOMAP-base'
         VERSION = '1.3.1'
-        ZENODO_KEY = credentials('zenodo-gomap')
+        ZENODO_KEY = credentials('zenodo')
     }
     stages {
         stage('Build') {
