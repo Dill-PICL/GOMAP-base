@@ -11,7 +11,9 @@ pipeline {
                 sh '''
                     singularity --version
                     ls -lah
-                    ./build.sh
+                    instance_name="GOMAP-base"
+                    sudo mkdir tmp
+                    sudo singularity build --tmpdir tmp $instance_name.sif Singularity
                 '''
             }
         }
