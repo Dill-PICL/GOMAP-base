@@ -44,6 +44,8 @@ Singularity Version 3.2.1
 	cp azcopy_linux_amd64_10.3.0/azcopy /usr/local/bin/ && \
 	chmod 755 /usr/local/bin/azcopy
 
+	
+
 	echo "=============================================="
 	echo "Completed Post" 
 	echo "=============================================="
