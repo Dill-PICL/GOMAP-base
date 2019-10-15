@@ -11,7 +11,7 @@ Singularity Version 3.2.1
     export DEBIAN_FRONTEND=noninteractive
     export MYSQL_USER=pannzer
     export MYSQL_DATABASE=pannzer
-    export MYSQL_ROOT_PASSWORD=mysql
+    export MYSQL_ROOT_PASSWORD=mysql 
 
 %post
   export LC_ALL=C
