@@ -18,7 +18,7 @@ pipeline {
                     ls -lah
                     instance_name="GOMAP-base"
                     sudo mkdir tmp
-                    sudo singularity build --tmpdir tmp $instance_name.sif Singularity
+                    sudo singularity build --tmpdir tmp ${IMAGE}.sif Singularity
                 '''
             }
             post{
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh '''
-                    singularity exec GOMAP-base.sif ls
+                    singularity exec ${IMAGE}.sif ls
                 '''
             }
             post {
