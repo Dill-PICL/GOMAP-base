@@ -9,6 +9,7 @@ pipeline {
     
     stages {
         stage('Build') {
+            agent { label 'ubuntu'}
             when { changeset "Singularity"}
             steps {
                 sh '''
@@ -20,8 +21,14 @@ pipeline {
                     sudo singularity build --tmpdir tmp $instance_name.sif Singularity
                 '''
             }
+            post{
+                success {
+                    echo "Image Successfully built"
+                }
+            }
         }
         stage('Test') {
+            agent { label 'ubuntu'}
             when { changeset "Singularity"}
             steps {
                 echo 'Testing..'
@@ -29,15 +36,22 @@ pipeline {
                     singularity exec GOMAP-base.sif ls
                 '''
             }
+            post {
+                success {
+                    echo "Image Successfully tested"
+                    azureUpload(storageCredentialId:'gomap', filesPath:"GOMAP-base.sif",allowAnonymousAccess:true, virtualPath:"${IMAGE}/${VERSION}/", storageType:"file",containerName:'gomap')
+                    echo "Image Successfully uploaded"
+                }
+            }
         }
         stage('Post') {
+            agent { label 'master'}
             when { changeset "Singularity"}
             steps {
                 echo 'Image Successfully Built'
                 sh '''
-                    python3 zenodo_upload.py ${ZENODO_KEY}
+                    echo python3 zenodo_upload.py ${ZENODO_KEY} /mnt/gomap/${IMAGE}/${VERSION}/${IMAGE}.simg
                 '''
-                azureUpload(storageCredentialId:'gomap', filesPath:"GOMAP-base.sif",allowAnonymousAccess:true, virtualPath:"${IMAGE}/${VERSION}/", storageType:"blob",containerName:'gomap')
             }
         }
     }

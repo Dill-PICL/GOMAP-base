@@ -2,6 +2,7 @@
 import requests, sys, pprint, os
 
 zenodo_access_token = str(sys.argv[1])
+fileName = str(sys.argv[2])
 params_zenodo = dict()
 params_zenodo['access_token']=zenodo_access_token
 
@@ -24,7 +25,7 @@ upload_url = bucket_url + "/" + os.path.basename(fname)
 
 print(upload_url)
 
-with open(fname, 'rb') as fp:
+with open(fileName, 'rb') as fp:
     res = requests.put(
         upload_url,
         data=fp,
