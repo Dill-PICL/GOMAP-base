@@ -37,9 +37,9 @@ Singularity Version 3.4.1
 
 	ls 
 	
-	wget -O azcopy.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
-	tar -xf azcopy.tar.gz && \
-	cp azcopy_linux_amd64_10.3.0/azcopy /usr/bin/ && \
+	wget -O azcopy_v10.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
+	tar -xf azcopy_v10.tar.gz --strip-components=1 && \
+	cp azcopy /usr/bin/ && \
 	chmod 755 /usr/bin/azcopy 
 
 	
