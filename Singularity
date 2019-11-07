@@ -7,11 +7,7 @@ Version 1.1.0
 Singularity Version 3.2.1
 
 %environment
-    export LC_ALL=C
-    export DEBIAN_FRONTEND=noninteractive
-    export MYSQL_USER=pannzer
-    export MYSQL_DATABASE=pannzer
-    export MYSQL_ROOT_PASSWORD=mysql
+
 
 %post
   export LC_ALL=C
@@ -22,7 +18,7 @@ Singularity Version 3.2.1
 	apt-get -yq install bsdutils lsb-base passwd perl psmisc debconf libc6 libevent-core-2.1-6 libgcc1 liblz4-1 libstdc++6 zlib1g gfortran rsync build-essential less vim wget python-pip libfuse2 r-base openjdk-8-jdk libidn11-dev libssl1.0-dev libssl1.0.0 git ncbi-blast+ octave octave-dataframe sqlite3 libsqlite3-dev python3-pip
 	update-java-alternatives -s java-1.8.0-openjdk-amd64
 
-	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", Ncpus=4, INSTALL_opts="--no-html")'
+	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", INSTALL_opts="--no-html")'
 
 	pip install numpy==1.14.5
 	pip install scipy==1.1.0
@@ -31,20 +27,22 @@ Singularity Version 3.2.1
 	pip install lxml==4.2.1
 	pip install PyYAML==3.12
 	pip install yamldirs==1.1.3
-	pip install pyrocopy==0.8.0
+	pip install pyrocopy==0.8.0  
 	pip install requests==2.19.1
 	pip install requests-toolbelt==0.8.0
 	pip install numpydoc==0.8.0
 	pip install biopython==1.70
 	pip install joblib==0.12.2
 	pip install natsort==5.3.3
+
+	ls 
 	
-	pip3 install awscli
+	wget -O azcopy.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
+	tar -xf azcopy.tar.gz && \
+	cp azcopy_linux_amd64_10.3.0/azcopy /usr/local/bin/ && \
+	chmod 755 /usr/local/bin/azcopy 
 
-	#wget ftp://ftp.renci.org/pub/irods/releases/4.1.9/ubuntu14/irods-icommands-4.1.9-ubuntu14-x86_64.deb
-	#dpkg -i irods-icommands-4.1.9-ubuntu14-x86_64.deb 
-
-
+	
 
 	echo "=============================================="
 	echo "Completed Post" 
