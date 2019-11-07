@@ -4,7 +4,7 @@ From: ubuntu:bionic
 %labels
 MAINTAINER Kokulapalan Wimalanathan
 Version 1.1.0
-Singularity Version 3.2.1
+Singularity Version 3.4.1
 
 %environment
 
@@ -39,8 +39,8 @@ Singularity Version 3.2.1
 	
 	wget -O azcopy.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
 	tar -xf azcopy.tar.gz && \
-	cp azcopy_linux_amd64_10.3.0/azcopy /usr/local/bin/ && \
-	chmod 755 /usr/local/bin/azcopy 
+	cp azcopy_linux_amd64_10.3.0/azcopy /usr/bin/ && \
+	chmod 755 /usr/bin/azcopy 
 
 	
 
