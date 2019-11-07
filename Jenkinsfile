@@ -44,15 +44,5 @@ pipeline {
                 }
             }
         }
-        stage('Post') {
-            agent { label 'master'}
-            when { changeset "Singularity"}
-            steps {
-                echo 'Image Successfully Built'
-                sh '''
-                    echo python3 zenodo_upload.py ${ZENODO_KEY} /mnt/gomap/${IMAGE}/${VERSION}/${IMAGE}.simg
-                '''
-            }
-        }
     }
 }
