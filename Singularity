@@ -7,10 +7,10 @@ Version 1.1.0
 Singularity Version 3.4.1
 
 %environment
-	export IRODS_HOST=data.cyverse.org
-	export  IRODS_PORT=1247
-    export  IRODS_USER_NAME=anonymous
-    export  IRODS_ZONE_NAME=iplant
+	export IRODS_HOST="data.cyverse.org"
+	export  IRODS_PORT="1247"
+    export  IRODS_USER_NAME="anonymous"
+    export  IRODS_ZONE_NAME="iplant"
 
 %post
 	export LC_ALL=C
