@@ -53,3 +53,10 @@ Singularity Version 3.4.1
 	echo "=============================================="
 	echo "Completed Post" 
 	echo "=============================================="
+
+%startscript
+	chmod 777 /tmp
+
+%runscript
+	cd /opt/GOMAP/ 
+	./gomap.py "$@"
