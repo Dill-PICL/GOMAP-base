@@ -2,9 +2,9 @@ Bootstrap: docker
 From: ubuntu:bionic
 
 %labels
-MAINTAINER Kokulapalan Wimalanathan
-Version 1.1.0
-Singularity Version 3.4.1
+BASE_OWNER Wimalanathan Kokulapalan
+BASE_MAINTAINER Wimalanathan Kokulapalan
+BASE_VERSION 1.1.1
 
 %environment
 	export IRODS_HOST="data.cyverse.org"
