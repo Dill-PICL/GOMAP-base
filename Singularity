@@ -42,7 +42,12 @@ BASE_VERSION 1.1.1
 	wget "https://files.renci.org/pub/irods/releases/4.1.12/ubuntu14/irods-icommands-4.1.12-ubuntu14-x86_64.deb"
 	dpkg -i irods-icommands-4.1.12-ubuntu14-x86_64.deb
 
-	ls 
+	wget -q http://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz  && \
+	tar -xf  mpich-3.2.1.tar.gz && \
+	cd mpich-3.2.1 &&  \
+	./configure && make -j8 && make install &&  \
+	cd .. && \
+	pip install mpi4py==3.0.0  
 	
 	
 	wget -O azcopy_v10.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
