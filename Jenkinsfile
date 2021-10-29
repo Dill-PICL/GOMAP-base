@@ -56,7 +56,7 @@ pipeline {
         stage('Copy Tmp Image') {
             when {
                 anyOf {
-                    changeset 'singularity/*'
+                    changeset 'Singularity'
                     changeset 'Jenkinsfile'  
                 }
                 anyOf {
