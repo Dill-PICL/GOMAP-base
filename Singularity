@@ -61,8 +61,8 @@ BASE_VERSION 'v1.1.2'
 	chmod 755 /usr/bin/azcopy
 
 	
-	mkdir /data
-	mkdir /opt/GOMAP
+	mkdir -p /data
+	mkdir -p /opt/GOMAP
 	mkdir -p /tmpdir
 	mkdir -p /workdir
 	mkdir -p /work	  
