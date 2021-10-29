@@ -4,7 +4,10 @@ From: ubuntu:bionic
 %labels
 BASE_OWNER Wimalanathan Kokulapalan
 BASE_MAINTAINER Wimalanathan Kokulapalan
-BASE_VERSION 1.1.2
+BASE_VERSION 'v1.1.2'
+
+# %files
+# 	data /data
 
 %environment
 	export IRODS_HOST="data.cyverse.org"
@@ -32,7 +35,7 @@ BASE_VERSION 1.1.2
 	pip install PyYAML==3.12
 	pip install yamldirs==1.1.3
 	pip install pyrocopy==0.8.0  
-	pip install requests==2.19.1
+	pip install requests==2.20.0
 	pip install requests-toolbelt==0.8.0
 	pip install numpydoc==0.8.0
 	pip install biopython==1.70
@@ -45,7 +48,7 @@ BASE_VERSION 1.1.2
 	wget -q http://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz  && \
 	tar -xf  mpich-3.2.1.tar.gz && \
 	cd mpich-3.2.1 &&  \
-	./configure && make && make install &&  \
+	./configure && make -j16 && make install &&  \
 	cd .. && \
 	pip install mpi4py==3.0.0  
 	
@@ -55,8 +58,13 @@ BASE_VERSION 1.1.2
 	cp azcopy /usr/bin/ && \
 	chmod 755 /usr/bin/azcopy
 
-	mkdir -p /opt/GOMAP
-	mkdir -p /data
+	
+	mkdir /data
+	mkdir /opt/GOMAP
+	mkdir -p /tmpdir
+	mkdir -p /workdir
+	mkdir -p /work	  
+	mkdir -p /scratch
 
 	echo "=============================================="
 	echo "Completed Post" 
