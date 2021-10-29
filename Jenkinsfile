@@ -74,8 +74,9 @@ pipeline {
                     mkdir -p /${CONTAINER}/${IMAGE}/${VERSION}/
                     rsync -v ${IMAGE}.sif /${CONTAINER}/${IMAGE}/${VERSION}/${IMAGE}.sif
                 '''
-                echo 'Image Successfully uploaded'
+                echo 'Base Image Successfully uploaded'
             }
         }
     }
 }
+
