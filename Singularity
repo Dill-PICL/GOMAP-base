@@ -25,8 +25,8 @@ BASE_VERSION 1.1.2
 
 	pip install numpy==1.14.5
 	pip install pyrsistent==0.14.0
-	pip install scipy==1.1.0
-	pip install jsonmerge==1.5.1
+	pip install scipy==1.2.0
+	pip install jsonmerge==1.5.2
 	pip install jsonschema==2.6.0
 	pip install lxml==4.2.1
 	pip install PyYAML==3.12
