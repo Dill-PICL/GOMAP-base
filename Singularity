@@ -4,7 +4,7 @@ From: ubuntu:bionic
 %labels
 BASE_OWNER Wimalanathan Kokulapalan
 BASE_MAINTAINER Wimalanathan Kokulapalan
-BASE_VERSION 1.1.1
+BASE_VERSION 1.1.2
 
 %environment
 	export IRODS_HOST="data.cyverse.org"
@@ -45,7 +45,7 @@ BASE_VERSION 1.1.1
 	wget -q http://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz  && \
 	tar -xf  mpich-3.2.1.tar.gz && \
 	cd mpich-3.2.1 &&  \
-	./configure && make -j8 && make install &&  \
+	./configure && make && make install &&  \
 	cd .. && \
 	pip install mpi4py==3.0.0  
 	
@@ -54,6 +54,9 @@ BASE_VERSION 1.1.1
 	tar -xf azcopy_v10.tar.gz --strip-components=1 && \
 	cp azcopy /usr/bin/ && \
 	chmod 755 /usr/bin/azcopy
+
+	mkdir -p /opt/GOMAP
+	mkdir -p /data
 
 	echo "=============================================="
 	echo "Completed Post" 
