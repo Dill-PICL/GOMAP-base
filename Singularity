@@ -35,7 +35,7 @@ BASE_VERSION 'v1.1.2'
 	pip install PyYAML==3.12
 	pip install yamldirs==1.1.3
 	pip install pyrocopy==0.8.0  
-	pip install requests==2.19.1
+	pip install requests==2.20.0
 	pip install requests-toolbelt==0.8.0
 	pip install numpydoc==0.8.0
 	pip install biopython==1.70
