@@ -6,8 +6,8 @@ BASE_OWNER Wimalanathan Kokulapalan
 BASE_MAINTAINER Wimalanathan Kokulapalan
 BASE_VERSION 'v1.1.2'
 
-# %files
-# 	data /data
+%files
+	data /data
 
 %environment
 	export IRODS_HOST="data.cyverse.org"
