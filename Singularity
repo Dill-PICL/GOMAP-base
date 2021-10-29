@@ -19,6 +19,8 @@ BASE_VERSION 'v1.1.2'
 	export LC_ALL=C
 	export DEBIAN_FRONTEND=noninteractive
 	export TZ=America/Chicago
+	export MAKEFLAGS="-j32"
+
 	echo "Running post.sh"
 	apt-get -q -y update
 	apt-get -yq install bsdutils lsb-base passwd perl psmisc debconf libc6 libevent-core-2.1-6 libgcc1 liblz4-1 libstdc++6 zlib1g gfortran rsync build-essential less vim wget python-pip libfuse2 r-base openjdk-8-jdk libidn11-dev libssl1.0-dev libssl1.0.0 git ncbi-blast+ octave octave-dataframe sqlite3 libsqlite3-dev python3-pip
@@ -48,7 +50,7 @@ BASE_VERSION 'v1.1.2'
 	wget -q http://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz  && \
 	tar -xf  mpich-3.2.1.tar.gz && \
 	cd mpich-3.2.1 &&  \
-	./configure && make -j16 && make install &&  \
+	./configure && make -j32 && make install &&  \
 	cd .. && \
 	pip install mpi4py==3.0.0  
 	

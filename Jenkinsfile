@@ -48,9 +48,9 @@ pipeline {
                     fi
                     mkdir tmp && \
                     sudo singularity build --tmpdir $PWD/tmp  ${IMAGE}.sif Singularity
-                    sudo rm -r $PWD/tmp
-                    // singularity run ${IMAGE}.sif -h
                 '''
+                    // sudo rm -r $PWD/tmp
+                    // singularity run ${IMAGE}.sif -h
             }
         }
         stage('Copy Tmp Image') {
