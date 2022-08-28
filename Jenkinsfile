@@ -3,7 +3,7 @@ pipeline {
     environment {
         CONTAINER = 'gomap'
         IMAGE = 'GOMAP-Base'
-        VERSION = 'v1.1.2'   
+        VERSION = 'v1.1.3'   
         FILESHARE_SAS = credentials('fileshareSAS') 
         BLOBSHARE_SAS = credentials('blobstorageSAS') 
     }
