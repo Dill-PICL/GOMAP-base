@@ -7,7 +7,8 @@ pipeline {
         FILESHARE_SAS = credentials('fileshareSAS') 
         BLOBSHARE_SAS = credentials('blobstorageSAS') 
     }
-       
+               
+               
     stages { 
         stage('Setup Test Env') {
             when {
