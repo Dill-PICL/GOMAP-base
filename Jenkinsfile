@@ -61,7 +61,7 @@ pipeline {
                     changeset 'Jenkinsfile'  
                 }
                 anyOf {
-                    branch 'master'
+                    branch 'master'  
                 }
                 anyOf {
                      expression { 
