@@ -4,7 +4,7 @@ From: ubuntu:bionic
 %labels
 BASE_OWNER Wimalanathan Kokulapalan
 BASE_MAINTAINER Wimalanathan Kokulapalan
-BASE_VERSION 'v1.1.2'
+BASE_VERSION 'v1.1.3'
 
 # %files
 # 	data /data
