@@ -6,7 +6,7 @@ BASE_OWNER Wimalanathan Kokulapalan
 BASE_MAINTAINER Wimalanathan Kokulapalan
 BASE_VERSION 'v1.1.3'
 
-%files
+%files   
 	data /data
 
 %environment
