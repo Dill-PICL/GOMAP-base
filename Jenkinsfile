@@ -48,7 +48,7 @@ pipeline {
                         sudo rm -r tmp
                     fi
                     mkdir tmp && \
-                    sudo singularity build --tmpdir $PWD/tmp  ${IMAGE}.sif Singularity
+                    sudo singularity build --force --tmpdir $PWD/tmp  ${IMAGE}.sif Singularity
                 '''
                     // sudo rm -r $PWD/tmp
                     // singularity run ${IMAGE}.sif -h
