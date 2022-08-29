@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo 'Downloading the Data'
                 sh '''
-                    sudo rm -rf tmp/
+                    sudo rm -rf tmp
                     mkdir -p data/ && 
                     azcopy sync "https://gokoolstorage.blob.core.windows.net/gomap/GOMAP-1.3/pipelineData/${BLOBSHARE_SAS}" data/ --recursive=true &&
                     chmod -R a+rwx data/ &&
