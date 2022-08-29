@@ -7,7 +7,7 @@ BASE_MAINTAINER Wimalanathan Kokulapalan
 BASE_VERSION 'v1.1.3'
 
 %files   
-	/scratch/jenkins/workspace/GOMAP-Base-Blue_master/data /
+	/scratch/jenkins/workspace/GOMAP-Base-Blue_master/data /data
 
 %environment
 	export IRODS_HOST="data.cyverse.org"
