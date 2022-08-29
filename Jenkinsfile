@@ -72,9 +72,9 @@ pipeline {
             steps {
                 echo 'Image Successfully tested'
                 sh '''
-                    mkdir -p /${CONTAINER}/${IMAGE}/${VERSION}/
-                    rsync -v ${IMAGE}.sif /${CONTAINER}/${IMAGE}/${VERSION}/${IMAGE}.sif
+                    azcopy cp ${IMAGE}.sif "https://gokoolstorage.blob.core.windows.net//${CONTAINER}/${IMAGE}/${VERSION}/${BLOBSHARE_SAS}"
                 '''
+                    // rsync -v ${IMAGE}.sif /${CONTAINER}/${IMAGE}/${VERSION}/${IMAGE}.sif
                 echo 'Base Image Successfully uploaded'
             }
         }
