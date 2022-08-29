@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: ubuntu:bionic
+From: ubuntu:focal
 
 %labels
 BASE_OWNER Wimalanathan Kokulapalan
@@ -22,9 +22,11 @@ BASE_VERSION 'v1.1.3'
 	export MAKEFLAGS="-j32"
 
 	echo "Running post.sh"
+	wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -
+	echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/renci-irods.list
 	apt-get -q -y update
 	apt-get -yq install bsdutils lsb-base passwd perl psmisc debconf libc6 libevent-core-2.1-6 libgcc1 liblz4-1 libstdc++6 zlib1g gfortran rsync build-essential less vim wget python-pip libfuse2 r-base openjdk-8-jdk libidn11-dev libssl1.0-dev libssl1.0.0 git ncbi-blast+ octave octave-dataframe sqlite3 libsqlite3-dev python3-pip
-	update-java-alternatives -s java-1.8.0-openjdk-amd64 
+	update-java-alternatives -s java-1.8.0-openjdk-amd64 irods-icommands
 
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", INSTALL_opts="--no-html")'
 
@@ -44,8 +46,11 @@ BASE_VERSION 'v1.1.3'
 	pip install joblib==0.12.2
 	pip install natsort==5.3.3
 
-	wget "https://files.renci.org/pub/irods/releases/4.1.12/ubuntu14/irods-icommands-4.1.12-ubuntu14-x86_64.deb"
-	dpkg -i irods-icommands-4.1.12-ubuntu14-x86_64.deb
+	# wget "https://files.renci.org/pub/irods/releases/4.1.12/ubuntu14/irods-icommands-4.1.12-ubuntu14-x86_64.deb"
+	# dpkg -i irods-icommands-4.1.12-ubuntu14-x86_64.deb
+
+	
+
 
 	wget -q http://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz  && \
 	tar -xf  mpich-3.2.1.tar.gz && \
