@@ -64,7 +64,6 @@ BASE_VERSION 'v1.1.3'
 	tar -xf azcopy_v10.tar.gz --strip-components=1 && \
 	cp azcopy /usr/bin/ && \
 	chmod 755 /usr/bin/azcopy
-
 	
 	mkdir -p /data
 	mkdir -p /opt/GOMAP
