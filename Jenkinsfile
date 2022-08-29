@@ -3,7 +3,7 @@ pipeline {
     environment {
         CONTAINER = 'gomap'
         IMAGE = 'GOMAP-Base'
-        VERSION = 'v1.1.3'   
+        VERSION = 'v1.1.3'
         FILESHARE_SAS = credentials('fileshareSAS') 
         BLOBSHARE_SAS = credentials('blobstorageSAS') 
     }
@@ -24,7 +24,7 @@ pipeline {
                 sh '''
                     sudo rm -rf tmp
                     mkdir -p data/ && 
-                    azcopy sync "https://gokoolstorage.blob.core.windows.net/gomap/GOMAP-1.3/pipelineData/${BLOBSHARE_SAS}" data/ --recursive=true &&
+                    azcopy sync "https://gokoolstorage.blob.core.windows.net/gomap/GOMAP-1.3/pipelineData-${VERSION}/${BLOBSHARE_SAS}" data/ --recursive=true &&
                     chmod -R a+rwx data/ &&
                     ls data/
                 ''' 
