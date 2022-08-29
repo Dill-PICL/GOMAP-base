@@ -25,8 +25,7 @@ pipeline {
                     sudo rm -rf tmp
                     mkdir -p data/ && 
                     azcopy sync "https://gokoolstorage.blob.core.windows.net/gomap/GOMAP-1.3/pipelineData-${VERSION}/${BLOBSHARE_SAS}" data/ --recursive=true &&
-                    chmod -R a+rwx data/ &&
-                    ls data/
+                    chmod -R a+rwx data/
                 ''' 
             }
         }
@@ -50,8 +49,6 @@ pipeline {
                     mkdir tmp && \
                     sudo singularity build --force --tmpdir $PWD/tmp  ${IMAGE}.sif Singularity
                 '''
-                    // sudo rm -r $PWD/tmp
-                    // singularity run ${IMAGE}.sif -h
             }
         }
         stage('Copy Tmp Image') {
