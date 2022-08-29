@@ -13,8 +13,12 @@ BASE_VERSION 'v1.1.3'
     export  IRODS_ZONE_NAME="iplant"
 
 %setup
-    mkdir -p ${SINGULARITY_ROOTFS}/data && \
-	rsync -ruP data/ ${SINGULARITY_ROOTFS}/data/
+    mkdir -p ${SINGULARITY_ROOTFS}/data
+	# && \
+	# rsync -ruP data/ ${SINGULARITY_ROOTFS}/data/
+
+%files
+	data/* /data/
 
 %post
 	export LC_ALL=C
