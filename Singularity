@@ -54,9 +54,6 @@ BASE_VERSION 'v1.1.3'
 	wget "https://files.renci.org/pub/irods/releases/4.1.12/ubuntu14/irods-icommands-4.1.12-ubuntu14-x86_64.deb"
 	dpkg -i irods-icommands-4.1.12-ubuntu14-x86_64.deb
 
-	
-
-
 	wget -q http://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz  && \
 	tar -xf  mpich-3.2.1.tar.gz && \
 	cd mpich-3.2.1 &&  \
