@@ -7,7 +7,7 @@ BASE_MAINTAINER Wimalanathan Kokulapalan
 BASE_VERSION 'v1.1.3'
 
 %files   
-	data/* /data/
+	data/ /data/
 
 %environment
 	export IRODS_HOST="data.cyverse.org"
@@ -64,7 +64,6 @@ BASE_VERSION 'v1.1.3'
 	cp azcopy /usr/bin/ && \
 	chmod 755 /usr/bin/azcopy
 	
-	mkdir -p /data
 	mkdir -p /opt/GOMAP
 	mkdir -p /tmpdir
 	mkdir -p /workdir
