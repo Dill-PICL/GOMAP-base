@@ -6,12 +6,6 @@ BASE_OWNER Wimalanathan Kokulapalan
 BASE_MAINTAINER Wimalanathan Kokulapalan
 BASE_VERSION 'v1.1.3'
 
-%environment
-	export IRODS_HOST="data.cyverse.org"
-	export  IRODS_PORT="1247"
-    export  IRODS_USER_NAME="anonymous"
-    export  IRODS_ZONE_NAME="iplant"
-
 %setup
     mkdir -p ${SINGULARITY_ROOTFS}/data
 	# && \
@@ -19,6 +13,14 @@ BASE_VERSION 'v1.1.3'
 
 %files
 	data/* /data/
+
+%environment
+	export IRODS_HOST="data.cyverse.org"
+	export  IRODS_PORT="1247"
+    export  IRODS_USER_NAME="anonymous"
+    export  IRODS_ZONE_NAME="iplant"
+
+
 
 %post
 	export LC_ALL=C
