@@ -22,11 +22,16 @@ BASE_VERSION 'v1.1.3'
 	export MAKEFLAGS="-j32"
 
 	echo "Running post.sh"
+	apt-get -y update
+	apt-get -y install bsdutils lsb-base passwd perl psmisc debconf libc6 \
+		libevent-core-2.1-6 libgcc1 liblz4-1 libstdc++6 zlib1g gfortran rsync \
+		build-essential less vim wget python-pip libfuse2 r-base openjdk-8-jdk \
+		libidn11-dev libssl1.0-dev libssl1.0.0 git ncbi-blast+ octave \
+		octave-dataframe sqlite3 libsqlite3-dev python3-pip
+	update-java-alternatives -s java-1.8.0-openjdk-amd64
 	wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key add -
 	echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/renci-irods.list
-	apt-get -q -y update
-	apt-get -yq install bsdutils lsb-base passwd perl psmisc debconf libc6 libevent-core-2.1-6 libgcc1 liblz4-1 libstdc++6 zlib1g gfortran rsync build-essential less vim wget python-pip libfuse2 r-base openjdk-8-jdk libidn11-dev libssl1.0-dev libssl1.0.0 git ncbi-blast+ octave octave-dataframe sqlite3 libsqlite3-dev python3-pip
-	update-java-alternatives -s java-1.8.0-openjdk-amd64 irods-icommands
+	apt-get -y install  irods-icommands
 
 	R -e 'install.packages(c("data.table","futile.logger","ontologyIndex","yaml"), repos="https://mirror.las.iastate.edu/CRAN/", INSTALL_opts="--no-html")'
 
