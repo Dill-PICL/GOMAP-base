@@ -7,7 +7,7 @@ BASE_MAINTAINER Wimalanathan Kokulapalan
 BASE_VERSION 'v1.1.3'
 
 %files   
-	data /data
+	data/* /data/
 
 %environment
 	export IRODS_HOST="data.cyverse.org"
