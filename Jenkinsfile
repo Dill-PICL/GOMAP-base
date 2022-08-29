@@ -47,7 +47,7 @@ pipeline {
                         sudo rm -r tmp
                     fi
                     mkdir tmp && \
-                    sudo singularity build --force --tmpdir $PWD/tmp  ${IMAGE}.sif Singularity
+                    sudo singularity build --force --disable-cache --tmpdir $PWD/tmp  ${IMAGE}.sif Singularity
                 '''
             }
         }
