@@ -11,9 +11,14 @@ pipeline {
     stages { 
         stage('Setup Test Env') {
             when {
-                anyOf {
-                    changeset 'Singularity'
-                    changeset 'Jenkinsfile'
+                anyOf{
+                    anyOf {
+                        changeset 'Singularity'
+                        changeset 'Jenkinsfile'
+                    }
+                    expression {
+                       currentBuild.buildCauses.toString().contains('UserIdCause')
+                    }
                 }
                 anyOf {
                     branch 'master'     
@@ -32,9 +37,14 @@ pipeline {
 
         stage('Build') {
             when {
-                anyOf {
-                    changeset 'Singularity'
-                    changeset 'Jenkinsfile'
+                anyOf{
+                    anyOf {
+                        changeset 'Singularity'
+                        changeset 'Jenkinsfile'
+                    }
+                    expression {
+                       currentBuild.buildCauses.toString().contains('UserIdCause')
+                    }
                 }
                 anyOf {
                     branch 'master'
@@ -53,9 +63,14 @@ pipeline {
         }
         stage('Copy Tmp Image') {
             when {
-                anyOf {
-                    changeset 'Singularity'
-                    changeset 'Jenkinsfile'  
+                anyOf{
+                    anyOf {
+                        changeset 'Singularity'
+                        changeset 'Jenkinsfile'
+                    }
+                    expression {
+                       currentBuild.buildCauses.toString().contains('UserIdCause')
+                    }
                 }
                 anyOf {
                     branch 'master'  
