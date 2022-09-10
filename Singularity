@@ -8,8 +8,6 @@ BASE_VERSION 'v1.1.3'
 
 %setup
     mkdir -p ${SINGULARITY_ROOTFS}/data
-	# && \
-	# rsync -ruP data/ ${SINGULARITY_ROOTFS}/data/
 
 %files
 	data/* /data/
@@ -19,8 +17,6 @@ BASE_VERSION 'v1.1.3'
 	export  IRODS_PORT="1247"
     export  IRODS_USER_NAME="anonymous"
     export  IRODS_ZONE_NAME="iplant"
-
-
 
 %post
 	export LC_ALL=C
