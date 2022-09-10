@@ -6,11 +6,11 @@ BASE_OWNER Wimalanathan Kokulapalan
 BASE_MAINTAINER Wimalanathan Kokulapalan
 BASE_VERSION 'v1.1.3'
 
-%setup
-    mkdir -p ${SINGULARITY_ROOTFS}/data
+# %setup
+#     mkdir -p ${SINGULARITY_ROOTFS}/data
 
 %files
-	data/* /data/
+	data /
 
 %environment
 	export IRODS_HOST="data.cyverse.org"
